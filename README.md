@@ -19,6 +19,8 @@ yarn run init
 
 that will install all dependencies to run the app.
 
+**Note** : Please refer to [installation guide](https://pywebview.flowrl.com/guide/installation.html#dependencies) and make sure all dependencies are set to run `pywebview` application.
+
 ## Start the Application
 
 On your terminal run this command
@@ -27,10 +29,8 @@ On your terminal run this command
 yarn start
 ```
 
-**Note**
-
-This template don't support hot reload to apply changes on your `frontend` code you need to
-_right click_ and _refresh_
+**Note** : This template don't support hot reload to apply changes on your `frontend` code you need
+to _right click_ and _refresh_
 
 ## Build the Application
 
@@ -39,3 +39,23 @@ Build the application using this command
 ```bash
 yarn build
 ```
+
+This will build the application to production on `publish` directory.
+
+**Note** : Please make sure to set
+
+```python
+DEBUG = FALSE
+```
+
+in `main.py` before deploying the app for production.
+
+## Build React
+
+Run this command to build react (frontend) application only.
+
+```bash
+yarn react-build
+```
+
+This will build the react application to production on `dist` directory.
