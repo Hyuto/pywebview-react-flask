@@ -1,0 +1,8 @@
+__pycache__/
+dist/
+build/
+publish/
+webview-env/
+
+node_modules/
+.parcel-cache/
