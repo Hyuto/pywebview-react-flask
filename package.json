@@ -1,11 +1,7 @@
 {
   "name": "react-flask-pywebview-app",
+  "description": "A simple boilerplate to start application with pywebview, React and Flask",
   "version": "1.0.0",
-  "license": "MIT",
-  "author": {
-    "name": "Wahyu Setianto",
-    "url": "https://github.com/Hyuto"
-  },
   "source": "./public/index.html",
   "scripts": {
     "init": "yarn && run-script-os",
@@ -27,6 +23,23 @@
     "serve:win32": ".\\webview-env\\Scripts\\python main.py",
     "serve:default": "./webview-env/bin/python main.py"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hyuto/pywebview-react-flask.git"
+  },
+  "keywords": [
+    "pywebview",
+    "react",
+    "flask",
+    "python",
+    "javascript"
+  ],
+  "author": "Wahyu Setianto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hyuto/pywebview-react-flask/issues"
+  },
+  "homepage": "https://github.com/Hyuto/pywebview-react-flask#readme",
   "devDependencies": {
     "@parcel/packager-raw-url": "^2.2.1",
     "@parcel/transformer-webmanifest": "^2.2.1",
