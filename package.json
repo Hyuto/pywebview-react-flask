@@ -8,7 +8,7 @@
     "init:win32": "py -m venv webview-env && .\\webview-env\\Scripts\\python -m pip install -r requirements.txt",
     "init:linux": "python3 -m venv webview-env && if [[ -z \"${KDE_FULL_SESSION}\" ]]; then yarn init:qt; else yarn init:gtk; fi",
     "init:qt": "./webview-env/bin/python -m pip install pyqt5 pyqtwebengine -r requirements.txt",
-    "init:gtk": "sudo apt install libgirepository1.0-dev gcc libcairo2-dev pkg-config python3-dev gir1.2-gtk-3.0 && ./webview-env/bin/python -m pip install pycairo PyGObject -r requirements.txt",
+    "init:gtk": "sudo apt install libgirepository1.0-dev gcc libcairo2-dev pkg-config python3-dev gir1.2-gtk-3.0 python3-gi python3-gi-cairo gir1.2-webkit2-4.0 && ./webview-env/bin/python -m pip install pycairo PyGObject -r requirements.txt",
     "clean": "shx rm -rf __pycache__ .parcel-cache dist",
     "deepclean": "shx rm -rf __pycache__ .parcel-cache build dist publish",
     "build": "yarn clean && yarn react-build && run-script-os",
