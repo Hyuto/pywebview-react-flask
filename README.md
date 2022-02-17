@@ -9,6 +9,13 @@
 Simple `Pywebview` application using `React` for the frontend and `Flask`
 to handle the backend.
 
+**Supported Platforms**
+
+| Platforms              |       Tested       |
+| :--------------------- | :----------------: |
+| Windows                | :white_check_mark: |
+| Linux [`Debian` based] | :white_check_mark: |
+
 ## Setup
 
 Clone this repo and run this commands on your terminal
@@ -59,3 +66,13 @@ yarn react-build
 ```
 
 This will build the react application to production on `dist` directory.
+
+## Install Additional Python Dependencies
+
+Run this command install additional python dependencies.
+
+```bash
+yarn install-dep <dependency_1> <dependency_2>
+```
+
+That command will call `pip` inside `pywebview venv` to install python .
