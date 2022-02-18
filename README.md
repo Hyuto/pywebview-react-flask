@@ -36,8 +36,7 @@ On your terminal run this command
 yarn start
 ```
 
-**Note** : This template don't support hot reload to apply changes on your `frontend` code you need
-to _right click_ and _refresh_
+**Note** : This template only support hot reload to apply changes in your `frontend` code you need but any changes on `app/backend` code you need to close and run the app again.
 
 ## Build the Application
 
@@ -57,7 +56,17 @@ DEBUG = FALSE
 
 in `main.py` before deploying the app for production.
 
-## Build React
+## React Application
+
+**Serve React**
+
+Run this command to build serve react application.
+
+```bash
+yarn react-serve
+```
+
+**Build React**
 
 Run this command to build react (frontend) application only.
 

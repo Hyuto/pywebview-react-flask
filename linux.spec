@@ -6,12 +6,12 @@ PyInstaller.config.CONF['distpath'] = "./publish"
 
 block_cipher = None
 
-a = Analysis(['./main.py'],
+a = Analysis(['./src/main.py'],
              pathex=['.'],
              binaries=None,
              datas=[('./dist', 'dist')],
              hiddenimports=['clr'],
-             excludes=[],
+             excludes=['./src/utils.py'],
              win_no_prefer_redirects=False,
              win_private_assemblies=False,
              cipher=block_cipher)

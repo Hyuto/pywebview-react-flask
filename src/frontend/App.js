@@ -31,7 +31,7 @@ const App = () => {
               Hello, <code>{data.user}</code>! <br />
             </span>
           ) : null}
-          Edit <code>src/App.js</code> save and refresh to apply changes.
+          Edit <code>src/frontend/App.js</code> save to apply changes.
         </p>
       </header>
     </div>
