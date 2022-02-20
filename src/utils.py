@@ -17,7 +17,8 @@ class Handler(FileSystemEventHandler):
         if event.is_directory:
             return None
 
-        print(f"Detected changes in template, refreshing ...")
+        _, src_path = os.path.split(event.src_path)
+        print(f"Detected changes in {src_path}, refreshing ...")
         for window in webview.windows:
             window.evaluate_js(r"window.location.reload()")
 
@@ -27,7 +28,13 @@ class Watcher:
         self.observer = Observer()
         self.DIRECTORY_TO_WATCH = template_dir
 
+    def _wait_first_launch(self):
+        while not os.path.exists(self.DIRECTORY_TO_WATCH):
+            time.sleep(0.5)
+
     def run(self):
+        self._wait_first_launch()
+
         event_handler = Handler()
         self.observer.schedule(event_handler, self.DIRECTORY_TO_WATCH, recursive=True)
         self.observer.start()

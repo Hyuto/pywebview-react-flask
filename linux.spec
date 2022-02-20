@@ -24,9 +24,9 @@ exe = EXE(pyz,
           name='react-flask-pywebview-app',
           debug=False,
           strip=True,
-          #icon='./public/favicon.ico',
+          icon='./public/favicon.ico',
           upx=True,
-          console=False )
+          console=False)
 
 coll = COLLECT(exe,
                a.binaries,
