@@ -74,6 +74,14 @@ Run this command to build react (frontend) application only.
 yarn react-build
 ```
 
+**Linting**
+
+Run this command to lint your react code.
+
+```bash
+yarn react-lint
+```
+
 This will build the react application to production on `dist` directory.
 
 ## Install Additional Python Dependencies

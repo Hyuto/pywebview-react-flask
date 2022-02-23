@@ -16,7 +16,8 @@
     "build:linux": "./webview-env/bin/pyinstaller linux.spec",
     "react-dev": "parcel watch",
     "react-build": "parcel build --public-url .",
-    "react-serve": "parcel",
+    "react-serve": "parcel serve",
+    "react-lint": "eslint \"src/frontend/**/*.{js,jsx}\"",
     "install-dep": "run-script-os",
     "install-dep:win32": ".\\webview-env\\Scripts\\python -m pip install",
     "install-dep:linux": "./webview-env/bin/python -m pip install",
@@ -46,6 +47,8 @@
     "@parcel/packager-raw-url": "^2.2.1",
     "@parcel/transformer-webmanifest": "^2.2.1",
     "concurrently": "^7.0.0",
+    "eslint": "^8.9.0",
+    "eslint-plugin-react": "^7.28.0",
     "parcel": "^2.2.1",
     "run-script-os": "^1.1.6",
     "shx": "^0.3.4"
