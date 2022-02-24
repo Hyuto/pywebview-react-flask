@@ -74,7 +74,13 @@ Run this command to build react (frontend) application only.
 yarn react-build
 ```
 
-**Linting**
+This will build the react application to production on `dist` directory.
+
+## Linting
+
+Code linting, use `eslint` to lint your react code and `flake8` to lint your python code.
+
+**react-lint**
 
 Run this command to lint your react code.
 
@@ -82,7 +88,13 @@ Run this command to lint your react code.
 yarn react-lint
 ```
 
-This will build the react application to production on `dist` directory.
+**python-lint**
+
+Run this command to lint your python code.
+
+```bash
+yarn python-lint
+```
 
 ## Install Additional Python Dependencies
 

@@ -1,14 +1,14 @@
 import os
 import sys
-from server import server
 import webview
+from backend.server import server
 
 DEBUG = True
 
 
-def WebViewApp():
+def webview_app():
     server.debug = DEBUG
-    window = webview.create_window("react-flask-pywebview-app", server)
+    webview.create_window("react-flask-pywebview-app", server)
     webview.start(debug=DEBUG)
 
 
@@ -21,4 +21,4 @@ if __name__ == "__main__":
         template_dir = os.path.join(os.getcwd(), "src", "frontend")
         run_frontend_watcher(template_dir=template_dir)
 
-    WebViewApp()
+    webview_app()

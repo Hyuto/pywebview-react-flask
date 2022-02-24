@@ -14,29 +14,27 @@ from watchdog.events import FileSystemEventHandler
 class Handler(FileSystemEventHandler):
     @staticmethod
     def on_any_event(event):
-        if event.is_directory:
-            return None
-
-        _, src_path = os.path.split(event.src_path)
-        print(f"Detected changes in {src_path}, refreshing ...")
-        for window in webview.windows:
-            window.evaluate_js(r"window.location.reload()")
+        if not event.is_directory:
+            _, src_path = os.path.split(event.src_path)
+            print(f"Detected changes in {src_path}, refreshing ...")
+            for window in webview.windows:
+                window.evaluate_js(r"window.location.reload()")
 
 
 class Watcher:
     def __init__(self, template_dir):
         self.observer = Observer()
-        self.DIRECTORY_TO_WATCH = template_dir
+        self.directory_to_watch = template_dir
 
     def _wait_first_launch(self):
-        while not os.path.exists(self.DIRECTORY_TO_WATCH):
+        while not os.path.exists(self.directory_to_watch):
             time.sleep(0.5)
 
     def run(self):
         self._wait_first_launch()
 
         event_handler = Handler()
-        self.observer.schedule(event_handler, self.DIRECTORY_TO_WATCH, recursive=True)
+        self.observer.schedule(event_handler, self.directory_to_watch, recursive=True)
         self.observer.start()
         try:
             while True:
@@ -47,8 +45,8 @@ class Watcher:
 
 
 def run_frontend_watcher(template_dir):
-    w = Watcher(template_dir)
+    watcher = Watcher(template_dir)
 
-    background_thread = threading.Thread(target=w.run, args=())
+    background_thread = threading.Thread(target=watcher.run, args=())
     background_thread.daemon = True
     background_thread.start()

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "React App",
+  "short_name": "react-flask-pywebview-app",
+  "name": "Webview App",
   "icons": [
     {
       "src": "favicon.ico",

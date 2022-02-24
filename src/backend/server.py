@@ -2,16 +2,16 @@ import os
 import sys
 import time
 import json
+import getpass  # get user
+from functools import wraps
 import webview
 from flask import Flask, render_template, jsonify, request
-from functools import wraps
-import getpass  # get user
 
 # Template directory
 if sys.flags.dev_mode:
-    MAIN_DIR = os.path.join(os.path.dirname(__file__), "..", "dist")  # development
+    MAIN_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "dist")  # development
 else:
-    MAIN_DIR = os.path.join(os.path.dirname(__file__), ".", "dist")  # production
+    MAIN_DIR = os.path.join(os.path.dirname(__file__), "..", "dist")  # production
 
 
 def wait_template():
@@ -30,8 +30,7 @@ def verify_token(function):
         token = data.get("token")
         if token == webview.token:
             return function(*args, **kwargs)
-        else:
-            raise Exception("Authentication error")
+        raise Exception("Authentication error")
 
     return wrapper
 
